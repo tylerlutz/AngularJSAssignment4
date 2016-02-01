@@ -12,6 +12,14 @@
 							{{product.name}}
 							<em class="pull-right">${{product.price | currency }}</em>
 						</h3>
+						<section ng-controller="PanelController as panel">
+							<ul class="nav nav-pills">
+								<li ng-class="{ active:tab === 1}"><a href ng-click="panel.selectTab(1)">Description</a></li>
+								<li><a href ng-click="tab = 2">Specifications</a></li>
+								<li><a href ng-click="tab = 3">Reviews</a></li>
+							</ul>
+							
+						</section>
 					</li>
 				</ul>
 			</div>
