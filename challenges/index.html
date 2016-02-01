@@ -7,12 +7,17 @@
 		<div class="container" ng-hide="store.product.soldOut">
 			<h1>{{"Hello, " + "Angular!"}}</h1>
 			<div ng-repeat="product in store.products">
-				
-				 <h3>
-				 	{{product.name}}
-			        <em class="pull-right">{{product.price}}</em>
-			      </h3>
-			      <button ng-show="product.canPurchase">Add to Cart</button>
+				<div class="list-group">
+					<div class="list-group-item" ng-repeat="product in store.products">
+						<h3>
+							{{product.name}}
+							<em class="pull-right">{{product.price | currency}}</em>
+						</h3>
+						<div class="gallery">
+							<img ng-src="{{product.images[0]}}" />
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="../js/angular.min.js"></script>
