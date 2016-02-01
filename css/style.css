@@ -1,0 +1,21 @@
+.img-wrap {
+	display: block;
+	margin: auto;
+}
+
+.small-image {
+	width: 50px;
+	margin-left: 25px;
+	margin-top: 20px;
+}
+
+.img-thumbnails {
+	margin-left: 120px;
+}
+
+.list-group {
+	width: 600px;
+	display: block;
+	margin: auto;
+}
+
