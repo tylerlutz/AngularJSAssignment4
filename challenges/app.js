@@ -11,17 +11,7 @@
   app.controller('StoreController',function(){
 	  this.products = gems;
   });
-  
-  app.controller('TabController',function(){
-     this.tab=1;
-     this.setTab = function(selectedTab){
-        this.tab = selectedTab;
-     };
-     this.isSet = function(givenTab){
-        return this.tab === givenTab;
-     };
-  });
-  
+    
   app.controller('ReviewController',function(){
       this.review = {};
       this.addReview = function(product){
@@ -44,6 +34,32 @@
          templateUrl: 'product-specs.html'
       };
   });
+  
+  app.directive("productReviews", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "product-reviews.html"
+    };
+  });
+  
+  app.directive('productTabs', function(){
+      return {
+         restrict: 'E',
+         templateUrl: 'product-tabs.html',
+         controller: function(){
+            this.tab = 1;
+
+            this.isSet = function(checkTab) {
+                 return this.tab === checkTab;
+            };
+
+            this.setTab = function(activeTab) {
+                 this.tab = activeTab;
+             };
+         },
+         controllerAs: "tab"
+      };
+   });
   
   var gems = [{
       name: 'Azurite',
